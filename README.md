@@ -1,7 +1,7 @@
 # SpringBootDemo
 
 技术栈
-spring boot + mybatis + maven 搭建后台应用
+spring boot + mybatis + mysql5.6 + maven 搭建后台应用
 
 功能：
 前后端分离
