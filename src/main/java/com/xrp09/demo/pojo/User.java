@@ -1,15 +1,35 @@
 package com.xrp09.demo.pojo;
 
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
+
+import java.util.Date;
 
 public class User {
 
     private int userid;
     private String name;
+
     private int age;
+    @JsonIgnore//使属性不显示
     private String love;
+    @JsonInclude(JsonInclude.Include.NON_NULL)//如果该字段是null则不予显示
     private String desc;
 
+
+
+    @JsonFormat(pattern="yyyy-MM-dd hh:mm:ss",locale="zh") //时间格式输出
+    private Date test;
+
+    public Date getTest() {
+        return test;
+    }
+
+    public void setTest(Date test) {
+        this.test = test;
+    }
 
     public User() {
     }

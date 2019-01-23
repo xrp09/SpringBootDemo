@@ -2,22 +2,28 @@ package com.xrp09.demo.controller;
 
 
 import com.xrp09.demo.pojo.JSONResult;
+import com.xrp09.demo.pojo.Resource;
+import com.xrp09.demo.pojo.User;
 import com.xrp09.demo.service.IUserService;
+import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import com.xrp09.demo.pojo.User;
+import java.util.Date;
 @RestController
 public class UserController {
 
     @Autowired
     private IUserService userservice;
 
+    @Autowired
+    private Resource resource;
+
 
     @RequestMapping("/hello")
     public JSONResult hello(){
-        return JSONResult.ok("测试成功!");
+        return JSONResult.ok("测试成功111!");
     }
 
     @RequestMapping("/queryAll")
@@ -44,6 +50,25 @@ public class UserController {
     public JSONResult deleteData(@RequestParam String name)throws Exception{
         userservice.delete(name);
         return JSONResult.ok("删除成功！");
+    }
+
+    @RequestMapping("/getUser")
+    public User getUserTest(){
+        User u  =  new User();
+        u.setName("xxx");
+        u.setAge(1);
+        u.setLove(new Date().toString());
+        u.setDesc(null);
+        u.setTest(new Date());
+        return u;
+    }
+
+    @RequestMapping("/getResource")
+    public JSONResult getResource(){
+        Resource res = new Resource();
+        BeanUtils.copyProperties(resource,res);
+        return JSONResult.ok(res);
+
     }
 
 
