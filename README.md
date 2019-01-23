@@ -6,6 +6,8 @@ spring boot + mybatis + mysql5.6 + maven 搭建后台应用
 功能：
 前后端分离
 支持热部署
+拦截器
+全局错误
 
 spring boot启动方式：
 1.mvn打包jar，java -jar name
