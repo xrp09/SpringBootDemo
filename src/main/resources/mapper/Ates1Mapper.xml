@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xrp09.demo.mapper.Ates1Mapper" >
+  <resultMap id="BaseResultMap" type="com.xrp09.demo.pojo.Ates1" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="control_id" property="controlId" jdbcType="INTEGER" />
+    <result column="page_id" property="pageId" jdbcType="VARCHAR" />
+    <result column="control_num" property="controlNum" jdbcType="VARCHAR" />
+    <result column="control_type" property="controlType" jdbcType="VARCHAR" />
+    <result column="control_code" property="controlCode" jdbcType="VARCHAR" />
+    <result column="control_name" property="controlName" jdbcType="VARCHAR" />
+    <result column="control_value" property="controlValue" jdbcType="VARCHAR" />
+    <result column="event_type" property="eventType" jdbcType="VARCHAR" />
+    <result column="event_desc" property="eventDesc" jdbcType="VARCHAR" />
+    <result column="handle_duration" property="handleDuration" jdbcType="DECIMAL" />
+  </resultMap>
+</mapper>

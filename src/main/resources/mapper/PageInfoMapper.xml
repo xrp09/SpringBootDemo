@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.xrp09.demo.mapper.PageInfoMapper" >
+  <resultMap id="BaseResultMap" type="com.xrp09.demo.pojo.PageInfo" >
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="page_id" property="pageId" jdbcType="VARCHAR" />
+    <result column="trade_id" property="tradeId" jdbcType="VARCHAR" />
+    <result column="page_num" property="pageNum" jdbcType="VARCHAR" />
+    <result column="page_name" property="pageName" jdbcType="VARCHAR" />
+    <result column="page_start_time" property="pageStartTime" jdbcType="TIME" />
+    <result column="page_end_time" property="pageEndTime" jdbcType="TIME" />
+    <result column="page_duration" property="pageDuration" jdbcType="DECIMAL" />
+  </resultMap>
+</mapper>
