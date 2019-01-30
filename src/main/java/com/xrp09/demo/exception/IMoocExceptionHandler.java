@@ -11,9 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 @ControllerAdvice//增强器
 public class IMoocExceptionHandler {
-
 	public static final String IMOOC_ERROR_VIEW = "error";
-
 //	@ExceptionHandler(value = Exception.class)
 //    public Object errorHandler(HttpServletRequest reqest,
 //    		HttpServletResponse response, Exception e) throws Exception {
@@ -26,7 +24,6 @@ public class IMoocExceptionHandler {
 //        mav.setViewName(IMOOC_ERROR_VIEW);
 //        return mav;
 //    }
-	
 	@ExceptionHandler(value = Exception.class)
     public Object errorHandler(HttpServletRequest reqest,
 							   HttpServletResponse response, Exception e) throws Exception {

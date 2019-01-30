@@ -3,7 +3,7 @@
 <mapper namespace="com.xrp09.demo.mapper.UserMapper" >
   <resultMap id="BaseResultMap" type="com.xrp09.demo.pojo.User" >
     <id column="userid" property="userid" jdbcType="INTEGER" />
-    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="username" property="name" jdbcType="VARCHAR" />
     <result column="age" property="age" jdbcType="INTEGER" />
     <result column="love" property="love" jdbcType="VARCHAR" />
     <result column="desc" property="desc" jdbcType="VARCHAR" />
@@ -15,10 +15,10 @@
   <select id="findname" resultType="com.xrp09.demo.pojo.User" >
         select * from USER  where name = #{name}
     </select>
-  <select id="insert">
+  <insert  id="insertuser" parameterType="com.xrp09.demo.pojo.User">
         INSERT INTO user VALUES(#{userid},#{name},#{age},#{love},#{desc})
-    </select>
-  <select id="delete" resultType="int" >
+    </insert>
+  <delete id="deleteuser" parameterType="java.lang.String">
         delete from USER  where name = #{name}
-    </select>
+    </delete>
 </mapper>

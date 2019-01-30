@@ -5,6 +5,8 @@ import com.xrp09.demo.mapper.UserMapper;
 import com.xrp09.demo.pojo.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Propagation;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,22 +19,26 @@ public class Userservice implements IUserService{
 
 
     @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
     public List<User> getUsers() {
         return usermapper.findAll();
     }
 
     @Override
+    @Transactional(propagation = Propagation.SUPPORTS)
     public List<User> queryDataByName( String name) {
         return usermapper.findname(name);
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void delete(String name) {
-        usermapper.delete(name);
+        usermapper.deleteuser(name);
     }
 
     @Override
+    @Transactional(propagation = Propagation.REQUIRED)
     public void insert(User user) {
-        usermapper.insert(user);
+          usermapper.insertuser(user);
     }
 }

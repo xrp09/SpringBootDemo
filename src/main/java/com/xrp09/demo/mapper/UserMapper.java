@@ -12,6 +12,6 @@ public interface UserMapper extends MyMapper<User> {
 
     public List<User> findAll();
     public List<User> findname(String name);
-    public int insert(User user);
-    public void delete(String name);
+    public void insertuser(User user);
+    public void deleteuser(String name);
 }

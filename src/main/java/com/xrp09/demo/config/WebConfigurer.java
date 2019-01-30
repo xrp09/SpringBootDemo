@@ -30,8 +30,6 @@ public class WebConfigurer implements WebMvcConfigurer {
 		 */
 		//拦截所有
 		registry.addInterceptor(new OneInterceptor()).addPathPatterns("/*/**");
-
-
 //		registry.addInterceptor(new OneInterceptor()).addPathPatterns("/one/**");
 //		registry.addInterceptor(new TwoInterceptor()).addPathPatterns("/two/**")
 //				.addPathPatterns("/one/**");
